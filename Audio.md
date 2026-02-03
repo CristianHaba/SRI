@@ -30,7 +30,7 @@ a. Red: adaptador puente (configura como fija la IP que te dé el DHCP)
 | IP | 192.168.1.139 |
 | Máscara | 24 |
 | Gateway | 192.168.1.1|
-
+| DNS | 8.8.8.8 |
 
 ---
 b. Comprueba que funciona el sonido
@@ -61,10 +61,10 @@ a. Red: adaptador puente (configura como fija la IP que te dé el DHCP)
 
 | Campos |  Configuración |
 | ----------- | ----------- |
-| IP | 192.168.1.139 |
+| IP | 192.168.1.141 |
 | Máscara | 24 |
 | Gateway | 192.168.1.1|
-
+| DNS | 8.8.8.8 |
 
 ---
 b. Comprueba que funciona el sonido
@@ -87,3 +87,28 @@ c. Instala Mixxx
 sudo apt install mixxx -y 
 ```
 Con este comando instalamos el servicio de Mixxx.
+
+* Configuración de Mixxx
+
+Ahora abrimos Mixxx y vamos al apartado: 
+
+"Opciones --> Preferencias --> Emisión en vivo".
+
+En el apartado de conexión al servidor hay que poner:
+
+| Campos |  Configuración |
+| ----------- | ----------- |
+| Servidor | 192.168.1.139 |
+| Montar | /haba |
+| Identificación | source|
+| Contraseña | 1234 |
+
+Cuando tengamos esta configuración clickamos en el apartado de "Aceptar".
+
+Ahora tenemos que descargar una canción e importarla en Mixx, podemos importarla arrastrandola desde la carpeta a la interfaz de Mixx.
+
+Cuando la tengamos tenemos que darle a la opción "ON AIR" hasta que se ponga en verde.
+
+## COMPROBACIÓN NAVEGADOR
+
+## COMPROBACIÓN VLC
