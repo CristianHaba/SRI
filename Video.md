@@ -46,7 +46,7 @@ sudo ffmpeg -i big-buck-bunny-1080p-30sec.mp4 -c:v copy -c:a copy big-bunny.mkv
 
 **a) ¿Ha cambiado el tamaño de forma significativa?**
 
-![tamaño](/imagenes/capturas_video/tamaño%20imagen.png)
+![tamaño1](/imagenes/capturas_video/tamaño%20imagen.png)
 
 Casi no ha cambiado el tamaño
 
@@ -77,21 +77,41 @@ El de 2 de bitrate ya que tiene mas pixeles borrosos
 
 * Si ambos tienen el mismo bitrate (2 Mbps), ¿pesan lo mismo los archivos finales?
 
+![tamaño2](/imagenes/capturas_video/tamañovideo.png)
+
 NO pesan lo mismo, en mi caso el que utiliza H.265 pesa 8 MB menos que el que utiliza H.264.
  
 ## Simulación de streaming con diferentes tipos de fichero.
 
-1. Low (móvil):
+# Low (móvil):
 
 Resolución 240p
 
 Bitrate: 400k
 
-2. High (fibra):
+```bash
+ffmpeg -i big-buck-bunny-1080p-30sec.mp4 -vf "scale=-2:240" -c:v libx264 -b:v 400k -c:a copy low_movil.mp4
+```
+<video src="/imagenes/capturas_video/low.mp4"
+       controls
+       style="max-width: 1000px;">
+</video>
+
+
+# High (fibra):
 
 Resolución: 1080p
 
 Bitrate: 2Mbps
+
+```bash
+ffmpeg -i big-buck-bunny-1080p-30sec.mp4 -vf scale=-1:1080 -b:v 2M high.mp4
+```
+
+<video src="/imagenes/capturas_video/high.mp4"
+       controls
+       style="max-width: 1000px;">
+</video>
 
 ---
 
@@ -99,4 +119,24 @@ Bitrate: 2Mbps
 
 Almacenamiento: Si tu servidor tiene un disco de 500 GB, ¿cuántas horas de vídeo del perfil "HD" (2 Mbps) podrías alojar?
 
+1. Convertir 2 Mbps a MB/s
+2 Mbps = 2/8 = 0,25 MB/s
+
+2. Calcular cuántos MB ocupa una hora de vídeo
+0,25 MB/s × 3600 s = 900 MB/h
+
+Cada hora de vídeo HD a 2 Mbps ocupa aprox. 0,9 GB.
+
+3. Con un disco de 500 GB
+500 GB / 0,9 GB/h ≈ 555 horas
+
 Red: Tienes una línea de 100 Mbps simétricos. ¿Cuántos usuarios podrían ver el perfil "Móvil" (400 kbps) simultáneamente antes de saturar el 80% de la línea?
+
+1. Capacidad útil al 80 %
+100 Mbps × 0,8 = 80 Mbps
+
+2. Bitrate por usuario (perfil Móvil)
+400 kbps = 0,4 Mbps
+
+3. Número máximo de usuarios simultáneos
+80 Mbps / 0,4 Mbps = 200 
