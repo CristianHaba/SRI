@@ -92,10 +92,7 @@ Bitrate: 400k
 ```bash
 ffmpeg -i big-buck-bunny-1080p-30sec.mp4 -vf "scale=-2:240" -c:v libx264 -b:v 400k -c:a copy low_movil.mp4
 ```
-<video src="/imagenes/capturas_video/low.mp4"
-       controls
-       style="max-width: 1000px;">
-</video>
+[Ver video](/imagenes/capturas_video/low.mp4)
 
 
 # High (fibra):
@@ -108,16 +105,13 @@ Bitrate: 2Mbps
 ffmpeg -i big-buck-bunny-1080p-30sec.mp4 -vf scale=-1:1080 -b:v 2M high.mp4
 ```
 
-<video src="/imagenes/capturas_video/high.mp4"
-       controls
-       style="max-width: 1000px;">
-</video>
+[Ver video](/imagenes/capturas_video/high.mp4)
 
 ---
 
 ## Preguntas finales:
 
-Almacenamiento: Si tu servidor tiene un disco de 500 GB, ¿cuántas horas de vídeo del perfil "HD" (2 Mbps) podrías alojar?
+**Almacenamiento: Si tu servidor tiene un disco de 500 GB, ¿cuántas horas de vídeo del perfil "HD" (2 Mbps) podrías alojar?**
 
 1. Convertir 2 Mbps a MB/s
 2 Mbps = 2/8 = 0,25 MB/s
@@ -130,7 +124,7 @@ Cada hora de vídeo HD a 2 Mbps ocupa aprox. 0,9 GB.
 3. Con un disco de 500 GB
 500 GB / 0,9 GB/h ≈ 555 horas
 
-Red: Tienes una línea de 100 Mbps simétricos. ¿Cuántos usuarios podrían ver el perfil "Móvil" (400 kbps) simultáneamente antes de saturar el 80% de la línea?
+**Red: Tienes una línea de 100 Mbps simétricos. ¿Cuántos usuarios podrían ver el perfil "Móvil" (400 kbps) simultáneamente antes de saturar el 80% de la línea?**
 
 1. Capacidad útil al 80 %
 100 Mbps × 0,8 = 80 Mbps
