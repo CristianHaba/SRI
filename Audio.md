@@ -111,4 +111,12 @@ Cuando la tengamos tenemos que darle a la opción "ON AIR" hasta que se ponga en
 
 ## COMPROBACIÓN NAVEGADOR
 
+http://192.168.1.139:8000/haba
+
+[Ver video](/imagenes/capturas_audio/navegador.mp4)
+
 ## COMPROBACIÓN VLC
+
+http://192.168.1.139:8000/haba
+
+[Ver video](/imagenes/capturas_audio/vlc.mp4)
