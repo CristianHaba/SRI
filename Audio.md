@@ -54,7 +54,7 @@ sudo apt install icecast2 -y
 ```
 Con este comando instalamos el servicio de icecast2.
 
-
+---
 ### 2. Monta un Ubuntu 24 como cliente DJ
 
 a. Red: adaptador puente (configura como fija la IP que te dé el DHCP)
